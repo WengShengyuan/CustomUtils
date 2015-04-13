@@ -1,15 +1,15 @@
 package myutils;
   
 import java.io.IOException;
-import java.math.BigInteger;  
-import java.security.SecureRandom;  
-  
-import javax.crypto.Cipher;  
-import javax.crypto.KeyGenerator;  
-import javax.crypto.spec.SecretKeySpec;  
-  
+import java.math.BigInteger;
+import java.security.SecureRandom;
+
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.spec.SecretKeySpec;
+
 import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;  
+import sun.misc.BASE64Encoder;
   
   
 /** 
