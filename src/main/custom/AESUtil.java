@@ -36,27 +36,13 @@ public class AESUtil {
         System.out.println("加密密钥和解密密钥：" + KEY);  
         String encrypt = aesEncrypt(content, KEY);  
         System.out.println("加密后：" + encrypt);  
-          
         String decrypt = aesDecryp(encrypt, KEY);  
         System.out.println("解密后：" + decrypt);  
+        System.out.println("String改16进制:");
+        System.out.println(toHexString(encrypt));
+        System.out.println("16进制改String:");
+        System.out.println(toStringHex(toHexString(encrypt)));
         
-        
-        
-        
-        
-        
-        System.out.println("-=======================");
-        String str = "java12345";
-		String ret = null;
-		ret = new BASE64Encoder().encode(str.getBytes());
-		System.out.println("加密前:"+str+" 加密后:"+ret);
-		str = "amF2YTEyMzQ1";
-		try {
-			ret = new String(new BASE64Decoder().decodeBuffer(str));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	    System.out.println("解密前:"+str+" 解密后:"+ret);
     }  
       
     /** 
@@ -103,7 +89,7 @@ public class AESUtil {
      * @throws Exception 
      */  
     public static String aesEncrypt(String content, String encryptKey) throws Exception {  
-        return base64Encode(aesEncryptToBytes(content, encryptKey));  
+        return toHexString(base64Encode(aesEncryptToBytes(content, encryptKey)));  
     }  
     
     /** 
@@ -114,7 +100,7 @@ public class AESUtil {
      * @throws Exception 
      */  
     public static String aesDecryp(String content, String encryptKey) throws Exception {  
-    	byte[] ret = new BASE64Decoder().decodeBuffer(content);
+    	byte[] ret = new BASE64Decoder().decodeBuffer(toStringHex(content));
     	  return aesDecryptByBytes(ret, encryptKey);  
     }
       
@@ -135,6 +121,32 @@ public class AESUtil {
           
         return new String(decryptBytes);  
     }  
-      
+ // 转化字符串为十六进制编码 
+    public static String toHexString(String s){ 
+	    String str=""; 
+	    for (int i=0;i<s.length();i++){ 
+		    int ch = (int)s.charAt(i); 
+		    String s4 = Integer.toHexString(ch); 
+		    str = str + s4; 
+	    } 
+	    return str; 
+    } 
+    // 转化十六进制编码为字符串 
+    public static String toStringHex(String s) { 
+	    byte[] baKeyword = new byte[s.length()/2]; 
+	    for(int i = 0; i < baKeyword.length; i++){ 
+		    try { 
+		    	baKeyword[i] = (byte)(0xff & Integer.parseInt(s.substring(i*2, i*2+2),16)); 
+		    } catch(Exception e) { 
+		    	e.printStackTrace(); 
+		    } 
+	    } 
+	    try { 
+	    	s = new String(baKeyword, "utf-8");//UTF-16le:Not 
+	    }catch (Exception e1) { 
+	    	e1.printStackTrace(); 
+	    } 
+	    return s; 
+    } 
       
 }  
