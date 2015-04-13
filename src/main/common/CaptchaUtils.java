@@ -4,7 +4,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
 import java.util.Random;
+
+import javax.imageio.ImageIO;
 
 public class CaptchaUtils  {
 	//private static  Logger logger = LoggerFactory.getLogger(CaptchaUtils.class);
@@ -96,19 +99,19 @@ public class CaptchaUtils  {
 	private String getRandomString(int num) {
 		return String.valueOf(RANDOM_STRS.charAt(num));
 	}
-/*
-	public static void main(String[] args) {
-		CaptchaUtils tool = new CaptchaUtils();
-		StringBuffer code = new StringBuffer();
-		BufferedImage image = tool.genRandomCodeImage(code);
-		try {
-			// 将内存中的图片通过流动形式输出到客户端
-			ImageIO.write(image, "JPEG", new FileOutputStream(new File(
-					"random-code.jpg")));
-		} catch (Exception e) {
-			logger.error(e.getLocalizedMessage());
-		}
 
-	}
-	*/
+//	public static void main(String[] args) {
+//		CaptchaUtils tool = new CaptchaUtils();
+//		StringBuffer code = new StringBuffer();
+//		BufferedImage image = tool.genRandomCodeImage(code);
+//		try {
+//			// 将内存中的图片通过流动形式输出到客户端
+//			ImageIO.write(image, "JPEG", new FileOutputStream(new File(
+//					"random-code.jpg")));
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//
+//	}
+	
 }
