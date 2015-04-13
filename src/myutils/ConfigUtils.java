@@ -1,4 +1,4 @@
-package com.rails.vehicle.core.common.Utils;
+package myutils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

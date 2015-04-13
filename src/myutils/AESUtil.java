@@ -1,4 +1,4 @@
-package com.rails.vehicle.core.common.Utils;
+package myutils;
   
 import java.io.IOException;
 import java.math.BigInteger;  

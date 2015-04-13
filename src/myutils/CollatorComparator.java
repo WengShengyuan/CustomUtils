@@ -1,4 +1,4 @@
-package com.rails.vehicle.core.common.Utils;
+package myutils;
 
 import java.text.CollationKey;
 import java.text.Collator;
