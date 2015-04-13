@@ -1,3 +1,6 @@
 # CustomUtils
-Based on existing Utils and other's contribution
-test
+该项根据实际工作需要制作的工具中提取
+
+工具在目前已有的工具包、同事制作的工具包的基础上进一步包装并扩展。
+
+
