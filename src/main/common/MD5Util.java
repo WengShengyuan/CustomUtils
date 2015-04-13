@@ -25,6 +25,30 @@ public class MD5Util {
     private static final Integer BYTE_LENGTH = 18;
 
 	private static boolean b;  
+	
+	
+	/**
+	 * MAIN 
+	 * @param args
+	 * @throws NoSuchAlgorithmException
+	 * @throws UnsupportedEncodingException
+	 */
+    public static void main(String[] args) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+		String password = "123456";
+		String encryptedpassword = getEncryptedPwd(password);
+		String encryptedpassword2 = getEncryptedPwd(password);
+		System.out.println(encryptedpassword);
+		System.out.println(encryptedpassword.length());
+		System.out.println(encryptedpassword2);
+		boolean b = validPassword(password,encryptedpassword);
+		boolean b2 = validPassword(password,encryptedpassword2);
+		boolean b3 = validPassword("1234567",encryptedpassword2);
+		System.out.println(b);
+		System.out.println(b2);
+		System.out.println(b3);
+		
+	}
+	
       
     /** 
      * 将16进制字符串转换成字节数组 
@@ -143,19 +167,5 @@ public class MD5Util {
         return byteToHexString(pwd);  
     }  
     
-    public static void main(String[] args) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-		String password = "123456";
-		String encryptedpassword = getEncryptedPwd(password);
-		String encryptedpassword2 = getEncryptedPwd(password);
-		System.out.println(encryptedpassword);
-		System.out.println(encryptedpassword.length());
-		System.out.println(encryptedpassword2);
-		boolean b = validPassword(password,encryptedpassword);
-		boolean b2 = validPassword(password,encryptedpassword2);
-		boolean b3 = validPassword("1234567",encryptedpassword2);
-		System.out.println(b);
-		System.out.println(b2);
-		System.out.println(b3);
-		
-	}
+
 }  
