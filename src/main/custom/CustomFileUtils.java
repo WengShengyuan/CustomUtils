@@ -36,6 +36,22 @@ public class CustomFileUtils extends org.apache.commons.io.FileUtils {
 	}
 	
 	/**
+	 * 拼接路径
+	 * @param pathList a, b, c, d
+	 * @return a/b/c/d 
+	 */
+	public static String parsePath(String ... pathList){
+		if(pathList.length == 0){
+			return "";
+		}
+		StringBuilder sb = new StringBuilder();
+		for(String o : pathList){
+			sb.append(o).append(File.separator);
+		}
+		return sb.toString().substring(0,sb.length()-1);
+	}
+	
+	/**
 	 * 文件重命名，如 a.jpg -> a_tail.jpg
 	 * @param file	源文件 a.jpg
 	 * @param tail	重命名后缀"tail"
