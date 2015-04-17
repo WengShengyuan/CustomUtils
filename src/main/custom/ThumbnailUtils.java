@@ -12,6 +12,7 @@ import net.coobird.thumbnailator.geometry.Positions;
 public class ThumbnailUtils {
 	//1.6 modify
 	//ASDFSAFD
+	//asdfsadf
 
 	public void imgResize(String oriPath, int[] imgSize, String newPath,
 			boolean keepScale, boolean deleteOri) throws Exception {
