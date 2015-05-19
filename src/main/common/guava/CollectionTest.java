@@ -2,10 +2,15 @@ package main.common.guava;
 
 
 import java.util.HashSet;
+import java.util.List;
 
 import com.google.common.base.Joiner;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Sets.SetView;
 import com.google.common.primitives.Ints;
@@ -58,8 +63,34 @@ public class CollectionTest {
 		
 		
 		/***********************************  Multimap  *************************************************/
+		/**
+		 * using one key to get multiple value
+		 */
+		Multimap<String, String> multiMap = ArrayListMultimap.create();
+		multiMap.put("key", "value1");
+		multiMap.put("key", "value2");
+		List<String> values = (List<String>) multiMap.get("key");
+		for(String o : values){
+			System.out.println(o);
+		}
 		
 		
+		/***********************************  Bimap  *************************************************/
+		/**
+		 * allow to get value by key or get key by value
+		 * 
+		 * 在使用BiMap时，会要求Value的唯一性。如果value重复了则会抛出错误：java.lang.IllegalArgumentException。
+		 */
+		BiMap<Integer,String> logfileMap = HashBiMap.create(); 
+		logfileMap.put(1,"a.log");
+        logfileMap.put(2,"b.log");
+        logfileMap.put(3,"c.log"); 
+        System.out.println("logfileMap:"+logfileMap); 
+        /**
+         * inverse方法会返回一个反转的BiMap，但是注意这个反转的map不是新的map对象，它实现了一种视图关联，这样你对于反转后的map的所有操作都会影响原先的map对象。
+         */
+        BiMap<String,Integer> filelogMap = logfileMap.inverse();
+        System.out.println("filelogMap:"+filelogMap);
 	}
 	
 	

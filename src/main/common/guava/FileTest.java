@@ -7,7 +7,7 @@ import java.util.List;
 import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 
-public class ReadFile {
+public class FileTest {
 	
 	
 	/**
