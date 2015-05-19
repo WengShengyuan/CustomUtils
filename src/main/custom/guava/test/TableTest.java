@@ -1,4 +1,4 @@
-package main.common.guava.test;
+package main.custom.guava.test;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
