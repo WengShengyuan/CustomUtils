@@ -16,6 +16,8 @@
 
 ### commonn
 
+* guava -【google tool API】
+
 * CaptchaUtils（依赖ImageUtils） -【验证码生成工具】
 
 * DateUtils / DateUtils2 -【日期处理】
