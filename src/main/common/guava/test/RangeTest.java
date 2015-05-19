@@ -1,4 +1,4 @@
-package main.common.guava;
+package main.common.guava.test;
 
 import com.google.common.collect.Range;
 import com.google.common.primitives.Ints;

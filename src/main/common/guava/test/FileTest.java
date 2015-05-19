@@ -1,4 +1,4 @@
-package main.common.guava;
+package main.common.guava.test;
 
 import java.io.File;
 import java.io.IOException;
