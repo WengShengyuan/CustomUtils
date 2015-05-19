@@ -68,10 +68,14 @@ public class BiMapUtil<K,V> {
 		map.put("1", "v1");
 		map.put("2", "v2");
 		
+		
+		
 		BiMapUtil<String,String> util = new BiMapUtil(map);
 		
 		System.out.println(util.getOriMap());
 		System.out.println(util.getInverseMap());
+		
+		System.out.println(new BiMapUtil(map).getByValue("v2"));
 		
 	}
 
