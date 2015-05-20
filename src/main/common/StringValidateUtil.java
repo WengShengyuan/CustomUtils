@@ -434,5 +434,10 @@ public class StringValidateUtil {
         Matcher matcher = pattern.matcher(str);
         return matcher.matches();
     }
+    
+    public static void main(String[] args){
+    	String url  = "198.216.5.60";
+    	System.out.println(IP4(url));
+    }
 
 }
