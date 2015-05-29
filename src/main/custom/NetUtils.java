@@ -15,22 +15,22 @@ public class NetUtils {
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
-//		System.out
-//				.println(get(
-//						"http://192.168.100.253:7755/login.cgi?act=login&s=192.168.100.253&p=5280&usrname=S1307&usrpwd=123456",
-//						"UTF8"));
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("usrpwd", "123456");
-		map.put("usrname", "S1307");
-		
-		// System.out.println(post("http://192.168.100.253:5280/login",map,"8859_1"));
-		System.out.println(post("http://192.168.100.253:5280/login", map,
-				"UTF-8"));
-		
-		
-		System.out.println(HttpClientUtil.sendPostRequest("http://192.168.100.253:5280/login", parseParam(map),false, null, null));
-		System.out.println(HttpClientUtil.sendPostSSLRequest("http://192.168.100.253:5280/login", map));
-		System.out.println(HttpClientUtil.sendPostRequestByJava("http://192.168.100.253:5280/login", map));
+		System.out
+				.println(get(
+						"http://sports.sina.com.cn",
+						"UTF8"));
+//		HashMap<String, String> map = new HashMap<String, String>();
+//		map.put("usrpwd", "123456");
+//		map.put("usrname", "S1307");
+//		
+//		// System.out.println(post("http://192.168.100.253:5280/login",map,"8859_1"));
+//		System.out.println(post("http://192.168.100.253:5280/login", map,
+//				"UTF-8"));
+//		
+//		
+//		System.out.println(HttpClientUtil.sendPostRequest("http://192.168.100.253:5280/login", parseParam(map),false, null, null));
+//		System.out.println(HttpClientUtil.sendPostSSLRequest("http://192.168.100.253:5280/login", map));
+//		System.out.println(HttpClientUtil.sendPostRequestByJava("http://192.168.100.253:5280/login", map));
 	}
 
 	public static String get(String pageUrl, String encoding) throws Exception {
